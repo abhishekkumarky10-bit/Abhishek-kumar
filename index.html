@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Control Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚦 Traffic Control</h1>
+
+    <!-- Start Screen -->
+    <div id="startScreen" class="screen">
+        <h2>Traffic Control Game</h2>
+        <p>Control the traffic lights and prevent accidents!</p>
+
+        <div class="instructions">
+            <p> Green = Vehicles move</p>
+            <p> Red = Vehicles stop</p>
+            <p> Accident = Lose a life</p>
+            <p>Safe vehicle = Score +10</p>
+        </div>
+
+        <button id="startBtn">▶ Start Game</button>
+    </div>
+
+    <div id="gameUI" class="hidden">
+
+        <div class="stats">
+            <div>⭐ Score: <span id="score">0</span></div>
+            <div>❤️ Lives: <span id="lives">3</span></div>
+            <div>🏆 Level: <span id="level">1</span></div>
+            <div>⏱️ Time: <span id="time">60</span></div>
+        </div>
+
+        <div id="game">
+
+            <div class="road vertical-road"></div>
+            <div class="road horizontal-road"></div>
+
+            <div class="lane-line vertical-line"></div>
+            <div class="lane-line horizontal-line"></div>
+
+            <div class="traffic north-light">
+                <div id="northRed" class="bulb red"></div>
+                <div id="northGreen" class="bulb"></div>
+            </div>
+
+            <div class="traffic south-light">
+                <div id="southRed" class="bulb red"></div>
+                <div id="southGreen" class="bulb"></div>
+            </div>
+
+            <div class="traffic east-light">
+                <div id="eastRed" class="bulb red"></div>
+                <div id="eastGreen" class="bulb"></div>
+            </div>
+
+            <div class="traffic west-light">
+                <div id="westRed" class="bulb red"></div>
+                <div id="westGreen" class="bulb"></div>
+            </div>
+
+            <div id="cars"></div>
+
+        </div>
+
+        <div class="controls">
+
+            <button id="nsBtn">
+                🟢 North / South
+            </button>
+
+            <button id="ewBtn">
+                🟢 East / West
+            </button>
+
+            <button id="pauseBtn">
+                ⏸ Pause
+            </button>
+
+        </div>
+
+        <p id="status">East / West traffic is moving</p>
+
+    </div>
+
+    <div id="gameOver" class="screen hidden">
+
+        <h2>💥 GAME OVER</h2>
+
+        <p>Your Score: <strong id="finalScore">0</strong></p>
+        <p>Level Reached: <strong id="finalLevel">1</strong></p>
+
+        <button id="restartBtn">🔄 Play Again</button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

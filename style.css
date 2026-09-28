@@ -1,0 +1,306 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111827;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 15px;
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.screen {
+    background: #1f2937;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.screen h2 {
+    margin-bottom: 15px;
+}
+
+.instructions {
+    background: #111827;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+button {
+    border: none;
+    padding: 13px 20px;
+    margin: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    background: #2563eb;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.04);
+    background: #1d4ed8;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+.stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.stats div {
+    background: #1f2937;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+
+#game {
+    width: 100%;
+    max-width: 850px;
+    height: 550px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    background: #228b22;
+    border-radius: 12px;
+    border: 4px solid #374151;
+}
+
+
+.road {
+    position: absolute;
+    background: #3f3f46;
+}
+
+.vertical-road {
+    width: 230px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.horizontal-road {
+    width: 100%;
+    height: 230px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.vertical-line {
+    position: absolute;
+    height: 100%;
+    border-left: 5px dashed #facc15;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.horizontal-line {
+    position: absolute;
+    width: 100%;
+    border-top: 5px dashed #facc15;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+
+.traffic {
+    width: 42px;
+    height: 75px;
+    background: #111;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 20;
+    padding: 7px;
+}
+
+.north-light {
+    top: 55px;
+    left: calc(50% - 115px);
+}
+
+.south-light {
+    bottom: 55px;
+    right: calc(50% - 115px);
+}
+
+.east-light {
+    right: 55px;
+    top: calc(50% - 115px);
+}
+
+.west-light {
+    left: 55px;
+    bottom: calc(50% - 115px);
+}
+
+.bulb {
+    width: 25px;
+    height: 25px;
+    background: #333;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.bulb.red {
+    background: #ef4444;
+}
+
+.bulb.green.active {
+    background: #22c55e;
+    box-shadow: 0 0 15px #22c55e;
+}
+
+.bulb.red.active {
+    background: #ef4444;
+    box-shadow: 0 0 15px #ef4444;
+}
+
+.car {
+    width: 34px;
+    height: 58px;
+    position: absolute;
+    z-index: 10;
+    border-radius: 8px;
+    border: 2px solid #111;
+}
+
+.car::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    background: #bfdbfe;
+    left: 5px;
+    top: 7px;
+    border-radius: 3px;
+}
+
+.car::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    left: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    box-shadow: 18px 0 white;
+}
+
+.car.red-car {
+    background: #dc2626;
+}
+
+.car.blue-car {
+    background: #2563eb;
+}
+
+.car.yellow-car {
+    background: #eab308;
+}
+
+.car.purple-car {
+    background: #9333ea;
+}
+
+.car.orange-car {
+    background: #ea580c;
+}
+
+
+.car.horizontal {
+    width: 58px;
+    height: 34px;
+}
+
+.car.horizontal::before {
+    width: 15px;
+    height: 20px;
+    left: 8px;
+    top: 5px;
+}
+
+
+.controls {
+    margin-top: 12px;
+}
+
+#nsBtn {
+    background: #16a34a;
+}
+
+#ewBtn {
+    background: #2563eb;
+}
+
+#pauseBtn {
+    background: #6b7280;
+}
+
+#status {
+    margin-top: 8px;
+    font-size: 17px;
+}
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 25px;
+    }
+
+    #game {
+        height: 480px;
+    }
+
+    .stats {
+        gap: 5px;
+    }
+
+    .stats div {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 11px 13px;
+    }
+
+    .vertical-road {
+        width: 190px;
+    }
+
+    .horizontal-road {
+        height: 190px;
+    }
+}
